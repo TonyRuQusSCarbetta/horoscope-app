@@ -9,6 +9,7 @@ function getHoro(userInput) {
   var userHoro = horos[userInput.toLowerCase()] || horos['default'];
   console.log(userHoro);
   // writing to the DOM based on what the user typed
+
   document.getElementById('info').style.display = 'block';
   document.getElementById('emptyWrapper').className = 'mx-auto text-center maxWidth d-block mt-5';
   document.getElementById('title').innerHTML = userHoro.title;
@@ -108,7 +109,7 @@ var horos = {
   default: {
     title: 'You entered an invalid zodiac sign.',
     info: 'Try checking the spelling and be sure not to leave a space after your last letter.',
-    img: 'default.jpg'
+    img: 'img/default.jpg'
     //http://www.callscotland.org.uk/common-assets/images/theme/try-again.png
   }
 };
@@ -118,5 +119,5 @@ var btn = document.getElementById('userInput');
 btn.addEventListener('keypress', function enterKey(e) {
   if (e.keyCode == 13) {
     getHoro();
-  };
+  }
 }, false);
